@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+
+$nav-color: #A8FFD0;
+$nav-bg: black;
+$nav-font: 'ABeeZee', sans-serif;
+
+.nav {
+  background-color: $nav-bg;
+  color: $nav-color;
+  height: 100%;
+  font-family: $nav-font;
+  font-size: 24px;
+
+  h1 {
+    padding-left: 10px;
+  }
+}
