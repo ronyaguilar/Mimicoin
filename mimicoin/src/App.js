@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {Header} from './components/Header.js';
+import {Header} from './components/header/Header.js';
 import style from './App.module.scss';
 
 class App extends Component {

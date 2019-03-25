@@ -1,0 +1,39 @@
+.headerMenu{
+  align-self: center;
+  height: 100%;
+  padding-right: 10px;
+}
+
+.dropDownMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding-right: 10px;
+
+}
+
+.navList{
+  display: none;
+}
+
+.menuButton{
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 992px) {
+  .headerMenu{
+    flex-basis: 35%;
+  }
+  .menuButton{
+    display: none;
+  }
+  .dropDownMenu{
+    align-self: center;
+    height: 100%;
+    padding-right: 10px;
+    flex-direction: row;
+    flex-basis: 35%;
+    justify-content: inherit;
+  }
+}

@@ -1,0 +1,49 @@
+.navGroup {
+  display: none;
+  color: white;
+  flex: 1;
+  ul{
+    display: flex;
+    flex: 1;
+    list-style: none;
+    li{
+      flex: auto;
+    }
+  }
+}
+
+.dropDownGroup{
+  display: flex;
+  color: white;
+  width: 200px;
+  flex: 1;
+  ul{
+    display: flex;
+    flex: 1;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-end;
+    li{
+      flex: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 992px){
+  .navGroup{
+    display: flex;
+  }
+  .dropDownGroup{
+    color: white;
+    flex: 1;
+    ul{
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      list-style: none;
+      li{
+        flex: auto;
+      }
+    }
+  }
+}
