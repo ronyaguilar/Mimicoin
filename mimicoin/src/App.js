@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
+
 import {Header} from './components/header/Header.js';
+import {LandingPage} from './components/LandingPage.js';
+
 import style from './App.module.scss';
 
 class App extends Component {
@@ -10,7 +13,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            {/*<Route exact path="/" component={LandingSection}/>*/}
+            <Route exact path="/" component={LandingPage}/>
           </div>
         </BrowserRouter>
       </div>
