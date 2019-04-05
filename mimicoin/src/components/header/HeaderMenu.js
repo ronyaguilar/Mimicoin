@@ -10,7 +10,7 @@ export const HeaderMenu = (props) => {
     return (
       <div className = {style.dropDownMenu}>
         <div className = {style.menuButton}>
-          <a onClick={() => toggleActive(!active)}><i class="fas fa-bars"></i></a>
+          <a onClick={() => toggleActive(!active)}><i className="fas fa-bars"></i></a>
         </div>
         <NavGroup active={active}/>
       </div>
@@ -21,7 +21,7 @@ export const HeaderMenu = (props) => {
       <div className = {style.headerMenu}>
         <NavGroup active={active}/>
         <div className = {style.menuButton}>
-          <a onClick={() => toggleActive(!active)}><i class="fas fa-bars"></i></a>
+          <a onClick={() => toggleActive(!active)}><i className="fas fa-bars"></i></a>
         </div>
       </div>
     );

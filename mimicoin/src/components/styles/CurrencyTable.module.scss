@@ -1,0 +1,29 @@
+.currency{
+  height: 100%;
+  margin-top: 20px;
+}
+
+.currencyTable{
+  width: 80%;
+  height: 70%;
+  margin-top: 2%;
+  margin-left: 10%;
+  thead{
+    text-align: right;
+    th{
+      :hover{
+        cursor: pointer;
+        background-color: #bbb;
+      }
+    }
+  }
+  tbody{
+    text-align: right;
+    td{
+      border: 2px solid #ccc;
+    }
+  }
+}
+table, td{
+  border-collapse: collapse;
+}

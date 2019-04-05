@@ -12,7 +12,7 @@ export const NavGroup = (props) => {
   return (
     <div className={navClass}>
       <ul>
-        <li>Currency</li>
+        <li>Currencies</li>
         <li>About</li>
         <li>Login</li>
       </ul>

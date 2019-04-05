@@ -1,0 +1,19 @@
+$nav-font: 'ABeeZee', sans-serif;
+
+.footer{
+  height: 55px;
+  width: 100%;
+  position: absolute;
+  bottom: -1;
+  background-color: black;
+  color: white;
+  font-family: $nav-font;
+  p{
+    padding-left: 20px;
+    padding-top: 20px;
+    a{
+      color: #A8FFD0;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "mimicoin",
+  "version": "1.0.0",
+  "description": "A cryptocurrency trading simulation platform",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix mimicoin\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronyaguilar/Mimicoin.git"
+  },
+  "author": "Rony Aguilar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronyaguilar/Mimicoin/issues"
+  },
+  "homepage": "https://github.com/ronyaguilar/Mimicoin#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10"
+  }
+}
