@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/ronyaguilar/Mimicoin#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

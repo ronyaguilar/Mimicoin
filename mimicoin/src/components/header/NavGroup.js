@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import style from '../styles/NavGroup.module.scss';
 
@@ -12,7 +13,7 @@ export const NavGroup = (props) => {
   return (
     <div className={navClass}>
       <ul>
-        <li>Currencies</li>
+        <li><Link to='/dashboard'>Currencies</Link></li>
         <li>About</li>
         <li>Login</li>
       </ul>

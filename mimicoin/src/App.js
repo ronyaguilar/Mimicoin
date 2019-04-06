@@ -4,9 +4,10 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {Header} from './components/header/Header.js';
 import {Footer} from './components/Footer.js';
 import {LandingPage} from './components/LandingPage.js';
-import {CurrencyTable} from './components/dashboard/CurrencyTable.js';
+import {CurrencyDashboard} from './components/dashboard/CurrencyDashboard';
 
 import style from './App.module.scss';
+
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
           <div style={{height: "100%"}}>
             <Header />
             <Route exact path="/" component={LandingPage}/>
-            <Route path="/dashboard" component={CurrencyTable}/>
+            <Route path="/dashboard" component={CurrencyDashboard}/>
             <Footer />
           </div>
         </BrowserRouter>

@@ -1,22 +1,8 @@
 import React, {useState,useEffect} from 'react';
-import axios from 'axios';
 import style from '../styles/CurrencyTable.module.scss';
 
-
 export const CurrencyTable = (props) => {
-  const [data, setData] = useState([]);
   const [flag, setFlag] = useState("market_cap");
-  const [interval, setInterval] = useState("1d");
-
-  useEffect(() => {
-      const fetchCoins = async () => {
-        const result = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=e316afa1075c427a9a44512bbd7f2c3b&interval=${interval}`);
-        await setData(result.data);
-      }
-
-      fetchCoins();
-  }
-  ,[flag, interval]);
 
   const flagSort = f => (a, b) => {
     let flagA = parseFloat(a[f]);
@@ -30,8 +16,6 @@ export const CurrencyTable = (props) => {
       order = 1;
     }
 
-
-
     if(flagA > flagB)
       comparison = 1;
     else if(flagA < flagB)
@@ -42,22 +26,21 @@ export const CurrencyTable = (props) => {
 
   const switchFlag = f => async () => {
     setFlag(f);
-  }
+  };
 
   return(
     <div className={style.currency}>
-      <h2>Currency List</h2>
-      <table className={style.currencyTable}>
+      <table className=`${style.currencyTable} striped`>
         <thead>
           <tr>
-            <th><a onClick={switchFlag('currency')}>Coin</a></th>
-            <th><a onClick={switchFlag('market_cap')}>Market Cap</a></th>
-            <th><a onClick={switchFlag('price')}>Price</a></th>
-            <th><a onClick={switchFlag('volume')}>Volume</a></th>
+            <th><button onClick={switchFlag('currency')}>Coin</button></th>
+            <th><button onClick={switchFlag('market_cap')}>Market Cap</button></th>
+            <th><button onClick={switchFlag('price')}>Price</button></th>
+            <th><button onClick={switchFlag('volume')}>Volume</button></th>
           </tr>
         </thead>
         <tbody>
-          {data.sort(flagSort(flag)).slice(0,10).map(item =>
+          {props.coins.sort(flagSort(flag)).slice(0,10).map(item =>
             (<tr key={item.currency}>
               <td>{item.currency}</td>
               <td>${parseInt(item.market_cap).toLocaleString()}</td>
@@ -69,4 +52,4 @@ export const CurrencyTable = (props) => {
       </table>
     </div>
   );
-}
+};

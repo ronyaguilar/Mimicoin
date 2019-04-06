@@ -3,9 +3,9 @@ $nav-font: 'ABeeZee', sans-serif;
 .footer{
   height: 55px;
   width: 100%;
-  position: absolute;
-  bottom: -1;
   background-color: black;
+  position: relative;
+  bottom: 0;
   color: white;
   font-family: $nav-font;
   p{
