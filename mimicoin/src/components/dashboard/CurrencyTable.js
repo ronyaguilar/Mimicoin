@@ -1,53 +1,56 @@
 import React, {useState,useEffect} from 'react';
+
+import {TableHeaderButton} from './TableHeaderButton';
+import {TableRow} from './TableRow';
+
 import style from '../styles/CurrencyTable.module.scss';
 
 export const CurrencyTable = (props) => {
   const [flag, setFlag] = useState("market_cap");
+  const [order, setOrder] = useState(-1);
 
-  const flagSort = f => (a, b) => {
-    let flagA = parseFloat(a[f]);
-    let flagB = parseFloat(b[f]);
-    let comparison = 0;
-    let order = -1;
-
-    if(f === 'currency'){
-      flagA = a[f];
-      flagB = b[f];
-      order = 1;
+  let flagSort = (a, b) => {
+    let reverse = order;
+    switch(flag){
+      case 'currency': a = a[flag]; b = b[flag]; reverse = -reverse; break;
+      case 'volume': a = parseFloat(a['1d'][flag]); b = parseFloat(b['1d'][flag]); break;
+      default:
+        a = parseFloat(a[flag]);
+        b = parseFloat(b[flag]);
     }
 
-    if(flagA > flagB)
-      comparison = 1;
-    else if(flagA < flagB)
-      comparison = -1;
+    if(isNaN(a) && flag !=='currency')
+      a = 0;
+    if(isNaN(b) && flag !=='currency')
+      b = 0;
 
-    return comparison * order;
+    if(a > b)
+      return reverse;
+    else
+      return -reverse;
   }
 
-  const switchFlag = f => async () => {
+  const switchFlag = f => () => {
+    if(f === flag)
+      setOrder(-order);
+    else
+      setOrder(-1);
     setFlag(f);
   };
 
   return(
     <div className={style.currency}>
-      <table className=`${style.currencyTable} striped`>
+      <table className={style.currencyTable}>
         <thead>
           <tr>
-            <th><button onClick={switchFlag('currency')}>Coin</button></th>
-            <th><button onClick={switchFlag('market_cap')}>Market Cap</button></th>
-            <th><button onClick={switchFlag('price')}>Price</button></th>
-            <th><button onClick={switchFlag('volume')}>Volume</button></th>
+            <TableHeaderButton sortHandler={switchFlag} flag='currency' label='Coin'/>
+            <TableHeaderButton sortHandler={switchFlag} flag='market_cap' label='Market Cap'/>
+            <TableHeaderButton sortHandler={switchFlag} flag='price' label='Price'/>
+            <TableHeaderButton sortHandler={switchFlag} flag='volume' label='Volume'/>
           </tr>
         </thead>
         <tbody>
-          {props.coins.sort(flagSort(flag)).slice(0,10).map(item =>
-            (<tr key={item.currency}>
-              <td>{item.currency}</td>
-              <td>${parseInt(item.market_cap).toLocaleString()}</td>
-              <td>${(Math.round(parseFloat(item.price) * 100)/100).toLocaleString()}</td>
-              <td>${parseInt(item['1d'].volume).toLocaleString()}</td>
-            </tr>)
-          )}
+          {props.coins.sort(flagSort).slice(0,10).map(item => <TableRow key={item.currency} item={item}/>)}
         </tbody>
       </table>
     </div>

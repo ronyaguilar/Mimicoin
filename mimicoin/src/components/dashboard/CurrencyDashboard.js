@@ -5,7 +5,6 @@ import {CurrencyTable} from './CurrencyTable';
 
 export const CurrencyDashboard = (props) => {
   const [coins, setCoins] = useState([]);
-  // const [flag, setFlag] = useState("market_cap");
   const [period, setPeriod] = useState("1d");
   const [refreshRate, setRate] = useState(10000);
 
