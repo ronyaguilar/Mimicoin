@@ -1,11 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import style from '../styles/TableRow.module.scss';
+
 export const TableRow = (props) => {
   let label = props.item.currency;
   let market_cap = parseInt(props.item.market_cap);
   let price = (Math.round(parseFloat(props.item.price) * 10000)/10000).toFixed(4);
-  let volume = parseInt(props.item['1d'].volume);
+  let volume = parseInt(props.item[props.period].volume);
 
   let cleanData = () => {
       if(isNaN(market_cap))
@@ -28,7 +30,7 @@ export const TableRow = (props) => {
 
   return(
     <tr>
-      <td>{label}</td>
+      <td className={style.coin}><Link to={`/coin/${label}`} className={style.label}>{label}</Link></td>
       <td>{market_cap}</td>
       <td>{price}</td>
       <td>{volume}</td>

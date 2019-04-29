@@ -1,3 +1,6 @@
+$positive-color: #55FFA0;
+$coin-color: #000;
+
 td{
   border-left: 1px solid #bdbdbd;
   border-top: 1px solid #dfdfdf;
@@ -5,4 +8,13 @@ td{
   padding: 8px 0 8px 0;
   font-size: 1.4rem;
   font-family: monospace;
+}
+
+.coin{
+  .label{
+    color: $coin-color;
+  }
+  :hover{
+    font-weight: 600;
+  }
 }

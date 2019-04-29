@@ -13,7 +13,7 @@ export const CurrencyTable = (props) => {
     let reverse = order;
     switch(flag){
       case 'currency': a = a[flag]; b = b[flag]; reverse = -reverse; break;
-      case 'volume': a = parseFloat(a['1d'][flag]); b = parseFloat(b['1d'][flag]); break;
+      case 'volume': a = parseFloat(a[props.period][flag]); b = parseFloat(b['1d'][flag]); break;
       default:
         a = parseFloat(a[flag]);
         b = parseFloat(b[flag]);
@@ -50,7 +50,7 @@ export const CurrencyTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.coins.sort(flagSort).slice(0,10).map(item => <TableRow key={item.currency} item={item}/>)}
+          {props.coins.sort(flagSort).slice(0,10).map(item => <TableRow key={item.currency} item={item} period={props.period}/>)}
         </tbody>
       </table>
     </div>

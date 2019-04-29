@@ -1,0 +1,23 @@
+$positive-color:rgb(0, 224, 142);
+$negative-color:rgb(255, 40, 40);
+
+.cell{
+  text-align: center;
+  margin-left: auto;
+  padding-right: 15px;
+}
+
+.pct{
+  display: flex;
+  h4{
+    padding-left: 5px;
+  }
+}
+
+.positive {
+  color: $positive-color;
+}
+
+.negative {
+  color: $negative-color;
+}

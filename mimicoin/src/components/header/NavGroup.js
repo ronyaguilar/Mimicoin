@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import Slug from './Slug';
+
 import style from '../styles/NavGroup.module.scss';
 
 export const NavGroup = (props) => {
@@ -15,7 +17,7 @@ export const NavGroup = (props) => {
       <ul>
         <li><Link to='/dashboard'>Currencies</Link></li>
         <li>About</li>
-        <li>Login</li>
+        <Slug />
       </ul>
     </div>
   );

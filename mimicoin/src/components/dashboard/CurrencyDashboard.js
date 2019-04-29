@@ -22,7 +22,7 @@ export const CurrencyDashboard = (props) => {
     <div style={{'height': '100%'}}>
       <div className={style.container}>
         <h2>Cryptocurrencies</h2>
-        <CurrencyTable coins={coins}/>
+        <CurrencyTable coins={coins} period={period}/>
       </div>
     </div>
   )
