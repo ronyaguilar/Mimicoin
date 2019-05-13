@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import style from '../styles/CurrencyDashboard.module.scss';
 import {CurrencyTable} from './CurrencyTable';
+import UserAssets from './UserAssets';
 
 export const CurrencyDashboard = (props) => {
   const [coins, setCoins] = useState([]);
@@ -9,7 +10,7 @@ export const CurrencyDashboard = (props) => {
   const [refreshRate, setRate] = useState(10000);
 
   const fetchCoins = async () => {
-    const result = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=e316afa1075c427a9a44512bbd7f2c3b&interval=${period}`);
+    const result = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_NOMICS_KEY}&interval=${period}`);
     await setCoins(result.data);
   };
 
@@ -17,12 +18,14 @@ export const CurrencyDashboard = (props) => {
     fetchCoins();
   },[]);
 
-
   return(
     <div style={{'height': '100%'}}>
       <div className={style.container}>
-        <h2>Cryptocurrencies</h2>
-        <CurrencyTable coins={coins} period={period}/>
+        <h2 className={style.tableTitle}>Cryptocurrencies</h2>
+        <div className={style.table}>
+          <CurrencyTable coins={coins} period={period}/>
+        </div>
+        <div className={style.wallet}><UserAssets /></div>
       </div>
     </div>
   )

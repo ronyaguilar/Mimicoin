@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+import {formatDollars2} from '../utils/helper';
 import axios from 'axios';
 import style from '../styles/NavGroup.module.scss';
-window.axios = axios;
-
 
 class Slug extends Component {
   constructor(props){
@@ -12,30 +11,44 @@ class Slug extends Component {
     this.state = {totalValue: 0};
   }
 
-  componentDidUpdate(){
+  async calcTotalVal(){
     let val = 0;
-    if(this.props.user){
-      this.props.user.wallet.currencies
-        .forEach(async (coin) => {
-          if(coin.id === 'USD'){
-            val += coin.amount;
-          } else {
-            let total = 0;
-            let count = 0;
-
-            const prices = await axios.get(`https://api.nomics.com/v1/markets/prices?key=e316afa1075c427a9a44512bbd7f2c3b&currency=${coin.id}`).data;
-            prices.forEach(result => {
-              if(result.quote === "USD"){
-                total += result.price;
-                count++;
-              }
-            });
-            val += coin.amount * (total/count);
-          }
-        });
+    if(this.props.user) {
+      for(const coin of this.props.user.wallet.currencies){
+        if(coin.id === 'USD'){
+          val += coin.amount;
+        }
+        else {
+          let total = 0;
+          let count = 0;
+          const prices = await axios.get(`https://api.nomics.com/v1/markets/prices?key=${process.env.REACT_APP_NOMICS_KEY}&currency=${coin.id}`);
+          await prices.data.forEach(result => {
+            if(result.quote === "USD"){
+              total += parseFloat(result.price);
+              count++;
+            }
+          });
+          val += coin.amount * (total/count);
+        }
+      }
+      console.log(val);
     }
-    if(this.state.totalValue !== val)
-      this.setState({totalValue: val});
+    return val;
+  }
+
+  async updateTotal(){
+    const total = await this.calcTotalVal();
+    if(this.state.totalValue !== total){
+      this.setState({totalValue: total});
+    }
+  }
+
+  componentDidMount(){
+    this.updateTotal();
+  }
+
+  componentDidUpdate(){
+      this.updateTotal();
   }
 
   renderSlug(){
@@ -48,7 +61,7 @@ class Slug extends Component {
         );
       default:
         return (
-          <li className={style.button}>${this.state.totalValue}</li>
+          <li className={style.button}>${formatDollars2(this.state.totalValue)}</li>
         );
     }
   }
@@ -59,7 +72,6 @@ class Slug extends Component {
 }
 
 function mapStateToProps(state){
-  console.log(state.user)
   return {user: state.user};
 }
 

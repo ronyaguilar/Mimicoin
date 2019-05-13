@@ -16,7 +16,7 @@ export const CoinDashboard = (props) => {
     const fetchCoin = async () => {
 
       let target = props.match.params.label;
-      const results = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=e316afa1075c427a9a44512bbd7f2c3b&interval=${period}`);
+      const results = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_NOMICS_KEY}&interval=${period}`);
       const coin = results.data.filter((item) => item.currency === target)[0];
       await setCoin(coin);
     };

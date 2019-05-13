@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
-// path
-
+// path;
 require('./models/User');
 require('./strategy');
 

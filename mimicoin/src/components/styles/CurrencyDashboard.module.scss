@@ -2,7 +2,23 @@
 .container{
   padding-top: 5%;
   padding-left: 10%;
+}
 
+@media only screen and (min-width: 992px){
+  .container{
+    display: grid;
+    grid-template-areas: "l l l l"
+                         "t t t w";
+  }
+  .tableTitle{
+    grid-area: l;
+  }
+  .table{
+    grid-area: t;
+  }
+  .wallet{
+    grid-area: w;
+  }
 }
 
 h2{

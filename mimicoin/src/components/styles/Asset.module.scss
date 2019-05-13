@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+
+$label-font: 'Abel',sans-serif;
+$alt-font: 'ABeeZee', sans-serif;
+
+.row{
+  list-style: none;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px rgba(191, 189, 189, 0.6);
+  font-family: $label-font;
+
+  .label{
+    padding-left: 10px;
+    font-size: 1.3rem;
+  }
+  .amount{
+    font-size: .8rem;
+    font-family: $alt-font;
+  }
+  .worth{
+    font-size: 1.1rem;
+  }
+  .profit{
+    padding-right: 10px;
+    font-size: 1.1rem;
+  }
+}
