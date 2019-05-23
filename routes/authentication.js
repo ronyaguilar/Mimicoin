@@ -15,4 +15,8 @@ module.exports = (app) => {
     req.logout();
     res.redirect('/');
   });
+  app.post('/api/watchlist', (req, res) => {
+    console.log(req.body.id);
+    res.redirect('/');
+  });
 };

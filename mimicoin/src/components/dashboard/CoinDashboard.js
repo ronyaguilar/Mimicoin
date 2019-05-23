@@ -15,7 +15,7 @@ export const CoinDashboard = (props) => {
 
     const fetchCoin = async () => {
 
-      let target = props.match.params.label;
+      let target = props.label;
       const results = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_NOMICS_KEY}&interval=${period}`);
       const coin = results.data.filter((item) => item.currency === target)[0];
       await setCoin(coin);
@@ -24,11 +24,8 @@ export const CoinDashboard = (props) => {
     fetchCoin();
   }, []);
 
-  console.log(coin[period['price_change_pct']]);
-
   return (
-    <div style={{height: '100%'}}>
-      <div className={style.container}>
+      <div className={style.dashboard}>
         <div className={style.topline}>
           <h2>{coin.currency}</h2>
           <StatLabel stat='Price' val={formatDollars2(coin.price)}/>
@@ -37,6 +34,5 @@ export const CoinDashboard = (props) => {
         </div>
         <CandleStick />
       </div>
-    </div>
   );
 }
