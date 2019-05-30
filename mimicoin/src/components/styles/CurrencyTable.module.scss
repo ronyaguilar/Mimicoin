@@ -1,3 +1,11 @@
+// Palette Theme
+$darker-blue: #2D3B48;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 .currency{
   height: 100%;
   padding-top: 1.5rem;
@@ -5,7 +13,7 @@
 
 .currencyTable{
   width: 90%;
-  border: 0.5px solid light-gray;
+  border: 0.5px solid $dark-blue;
   border-collapse: collapse;
-  box-shadow: 0px 0px 2px #aaaaaa;
+  box-shadow: 0px 0px 2px $dark-blue;
 }

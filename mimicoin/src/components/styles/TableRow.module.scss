@@ -1,9 +1,17 @@
 $positive-color: #55FFA0;
 $coin-color: #000;
+// Palette Theme
+$darker-blue: #2D3B48;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$grey: #8A9AAC;
+$old-background: #edeff2;
 
 td{
-  border-left: 1px solid #bdbdbd;
-  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid $darker-blue;
+  border-top: 1px solid $darker-blue;
+  background-color: $dark-blue;
   text-align: center;
   padding: 8px 0 8px 0;
   font-size: 1.4rem;

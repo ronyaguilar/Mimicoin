@@ -1,9 +1,17 @@
+// Palette Theme
+$darker-blue: #2D3B48;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 * {
   margin: 0;
   padding: 0;
 }
 body{
-  background-color: #edeff2;
+  background-color: $darker-blue;
   min-height: 100%;
   position: relative;
 }

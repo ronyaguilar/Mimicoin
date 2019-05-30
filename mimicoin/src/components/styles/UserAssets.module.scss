@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=ABeeZee');
 
+// Palette Theme
+$darkest-blue: #2D3B48;
+$smoke: #485665;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$light-green: #A8FFD0;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 $title-font: 'ABeeZee', sans-serif;
 
 .container{
   width: 100%;
-  border: 0.5px solid light-gray;
+  background-color: $smoke;
+  border: 0.5px solid $darkest-blue;
   border-collapse: collapse;
-  box-shadow: 0px 0px 2px #aaaaaa;
+  box-shadow: 0px 0px 2px $darkest-blue;
+}
+
+.label{
+  display:flex;
+  justify-content: space-between;
 }
 
 .title{
   font-family: $title-font;
   padding: 10px 10px 5px 10px;
-  border-bottom: solid thin #aaa;
+  border-bottom: solid 1px $light-green;
 }

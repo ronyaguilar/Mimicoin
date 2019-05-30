@@ -8,7 +8,15 @@ class UserAssets extends Component {
       if(this.props.user){
         return(
           <div className={style.container}>
-            <h2 className={style.title}>My Coins: </h2>
+            <div className={style.title}>
+              <h2>My Coins: </h2>
+              <div className={style.label}>
+                <p>Name</p>
+                <p>QTY</p>
+                <p>Value</p>
+                <p>Profit</p>
+              </div>
+            </div>
             <OwnedAssets coins={this.props.user.wallet.currencies} />
             <div></div>
             <h2 className={style.title}>My Watchlist: </h2>

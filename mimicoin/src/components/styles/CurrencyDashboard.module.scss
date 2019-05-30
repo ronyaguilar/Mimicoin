@@ -1,7 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
+
+// Palette Theme
+$darker-blue: #2D3B48;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$light-green: #A8FFD0;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 .container{
   padding-top: 5%;
   padding-left: 10%;
+}
+
+.tableTitle{
+  font-family: 'Abel', sans-serif;
+  font-size: 4rem;
+  color: $cream;
 }
 
 @media only screen and (min-width: 992px){
@@ -19,9 +35,4 @@
   .wallet{
     grid-area: w;
   }
-}
-
-h2{
-  font-family: 'Abel', sans-serif;
-  font-size: 2rem;
 }

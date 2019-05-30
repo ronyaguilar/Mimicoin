@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
+
+// Palette Theme
+$darkest-blue: #2D3B48;
+$smoke: #485665;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$light-green: #A8FFD0;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 .dashboard{
   width: 100%;
   height: 80%;
-  border: 0.5px solid #aaa;
-  box-shadow: 0px 0px 2px #aaaaaa;
+  border: 0.5px solid #222;
+  box-shadow: 0px 0px 2px #222;
 }
 
 .wrapper{
@@ -13,11 +24,11 @@
 .topline{
   display: flex;
   font-family: 'Abel', sans-serif;
-  background-color: #E3E3E3;
+  background-color: $smoke;
   padding-top: 10px;
   padding-left: 15px;
   padding-bottom: 5px;
-  border-bottom: 1px solid LightGrey;
+  border-bottom: 4px solid $turqoise;
 }
 
 @media only screen and (min-width: 960px){

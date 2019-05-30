@@ -4,13 +4,24 @@
 $label-font: 'Abel',sans-serif;
 $alt-font: 'ABeeZee', sans-serif;
 
+
+// Palette Theme
+$darkest-blue: #2D3B48;
+$smoke: #485665;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$light-green: #A8FFD0;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 .row{
   list-style: none;
   display: flex;
   height: 40px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: solid 1px rgba(191, 189, 189, 0.6);
+  border-bottom: solid 1px $cream;
   font-family: $label-font;
 
   .label{

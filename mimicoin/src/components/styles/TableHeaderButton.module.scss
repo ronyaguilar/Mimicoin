@@ -1,11 +1,20 @@
+// Palette Theme
+$darker-blue: #2D3B48;
+$cream: #E8DFE4;
+$dark-blue: #638091;
+$turqoise: #41B4B7;
+$light-green: #A8FFD0;
+$grey: #8A9AAC;
+$old-background: #edeff2;
+
 .headerButton{
   width: 100%;
   height: 40px;
-  border: 0.09rem solid #cacaca;
+  border: 0.04rem solid $darker-blue;
   font-size: 1.6rem;
   font-family: monospace;
   text-decoration: none;
-  background-color: #d8d7d8;
+  background-color: $grey;
   cursor: pointer;
 }
 
@@ -13,7 +22,7 @@ th{
   margin: 5px;
   border-spacing: none;
   :hover{
-    background-color: #dfdfdf;
+    background-color: $light-green;
     transition: linear 0.4s;
   }
 }
