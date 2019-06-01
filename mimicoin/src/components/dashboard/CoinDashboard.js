@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 import {StatLabel} from './StatLabel';
-import {CandleStick} from './CandleStick';
+import {CoinGraph} from './CoinGraph';
 
 import {formatDollars2, formatDollarAbbr} from '../utils/helper.js';
 import style from '../styles/CoinDashboard.module.scss';
@@ -32,7 +32,7 @@ export const CoinDashboard = (props) => {
           <StatLabel stat='Price Change' val={formatDollars2(coin[period]['price_change'])} pct={coin[period]['price_change_pct']}/>
           <StatLabel stat='All-Time High' val={formatDollars2(coin.high)}/>
         </div>
-        <CandleStick />
+        <CoinGraph id={props.label}/>
       </div>
   );
 }
