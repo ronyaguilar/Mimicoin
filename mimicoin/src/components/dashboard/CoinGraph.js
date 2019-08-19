@@ -3,11 +3,16 @@ import axios from 'axios';
 import moment from 'moment';
 import {formatDollars2} from '../utils/helper';
 import {Line} from 'react-chartjs-2';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Button from 'react-bootstrap/Button';
 
 // Use CANDLES FOR DATA
 export const CoinGraph = (props) => {
 	let [candleData, setCandleData] = useState([]);
 	let [period, setPeriod] = useState('week');
+	let [axisFormat, setAxisFormat] = useState('l');
+	let [labels, setLabels] = useState([]);
+
 	const options = {
 		layout: {
 			padding: 25
@@ -52,13 +57,17 @@ export const CoinGraph = (props) => {
 			}]
 		}
 	};
+
 	useEffect(() => {
 		let interval = '1d';
 		if(period === 'day')
 			interval = '1h';
 		let start = moment().subtract(1, period+'s').format('Y-MM-DD[T]HH:mm:ss.99[Z]');
+
 		const fetchCandles = async () => {
+			//const results = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_NOMICS_KEY}&ids=${props.id}&interval=${interval}`);
 			const results = await axios.get(`https://api.nomics.com/v1/candles?interval=${interval}&currency=${props.id}&key=${process.env.REACT_APP_NOMICS_KEY}&start=${start}`);
+
 			const formattedData = results.data.map((el) => {
 				return {
 					timestamp: el.timestamp,
@@ -66,33 +75,59 @@ export const CoinGraph = (props) => {
 					volume: el.volume
 				};
 			});
-			setCandleData(formattedData.slice(-7));
+			switch(period){
+				case 'week':
+					setCandleData(formattedData);
+					break;
+				case 'month':
+					setCandleData(formattedData.filter((el, index) => index % 2 === 0));
+					break;
+				case 'year':
+					setCandleData(formattedData.filter((el, index) => index % 30 === 0));
+					break;
+				default:
+					setCandleData(formattedData.filter((el, index) => index % 2 === 0));
+					break;
+			}
 		};
+
+		switch(period){
+			case 'day': setAxisFormat('LT'); break;
+			case 'year': setAxisFormat('MMM YY'); break;
+			default: setAxisFormat('l');
+		}
+
 		fetchCandles();
 
-	}, []);
-	let axisFormat = 'l';
-	switch(period){
-		case 'day': axisFormat = 'LT'; break;
-		case 'year': axisFormat = 'MMM YY'; break;
-		default: break;
-	}
+	}, [period]);
 
-	const graphData = {
-		labels: candleData.map((el) => {return moment(el.timestamp).format(axisFormat)}),
+
+
+	let graphData = {
+		labels: candleData.map(el => moment(el.timestamp).format(axisFormat)),
 		datasets: [{
-			data: candleData.map((el) => {return el.closePrice}),
-			fill: false
+			data: candleData.map(
+				(el) => {return el.closePrice}),
+			fill: true,
+			backgroundColor: 'rgba(99, 152, 150, 0.2)'
 		}]
 	};
-
+  //'rgba(0, 142, 137, 0.2)'
 	const legendConfig = {display: false};
+
+	const handleClick = p => () => {
+		setPeriod(p)
+	}
 
 
 	return (
 		<div>
-			<div>Chart Button</div>
-			<Line data={graphData} options={options} legend={legendConfig} redraw/>
-		</div>
-		);
+		<ButtonGroup >
+			<Button variant='secondary' onClick = {handleClick('day')}>Today</Button>
+			<Button variant='secondary' onClick = {handleClick('week')}>Week</Button>
+			<Button variant='secondary' onClick = {handleClick('month')}>Month</Button>
+			<Button variant='secondary' onClick = {handleClick('year')}>Year</Button>
+		</ButtonGroup>
+			<Line data={graphData} options={options} legend={legendConfig}/>
+		</div> );
 }

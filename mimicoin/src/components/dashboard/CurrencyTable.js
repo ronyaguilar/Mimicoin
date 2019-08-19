@@ -13,7 +13,16 @@ export const CurrencyTable = (props) => {
     let reverse = order;
     switch(flag){
       case 'currency': a = a[flag]; b = b[flag]; reverse = -reverse; break;
-      case 'volume': a = parseFloat(a[props.period][flag]); b = parseFloat(b['1d'][flag]); break;
+      case 'volume': 
+        if(typeof(a[props.period]) !== 'undefined')
+          a = parseFloat(a[props.period][flag]);
+        else
+          a = 0;
+        if(typeof(b[props.period]) !== 'undefined')
+          b = parseFloat(b[props.period][flag]);
+        else
+          b = 0; 
+        break;
       default:
         a = parseFloat(a[flag]);
         b = parseFloat(b[flag]);

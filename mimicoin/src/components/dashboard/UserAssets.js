@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import style from '../styles/UserAssets.module.scss';
-import {OwnedAssets} from './OwnedAssets';
+import {AssetList} from './AssetList';
 
 class UserAssets extends Component {
     render(){
@@ -17,7 +17,7 @@ class UserAssets extends Component {
                 <p>Profit</p>
               </div>
             </div>
-            <OwnedAssets coins={this.props.user.wallet.currencies} />
+            <AssetList coins={this.props.user.wallet.currencies} />
             <div></div>
             <h2 className={style.title}>My Watchlist: </h2>
             {/*this.renderWatchList()*/}

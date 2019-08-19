@@ -19,10 +19,18 @@ td{
 }
 
 .coin{
+  display: flex;
   .label{
     color: $coin-color;
   }
   :hover{
     font-weight: 600;
   }
+}
+
+img{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
