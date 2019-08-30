@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {NavGroup} from './NavGroup.js';
-import style from '../styles/HeaderMenu.module.scss';
+import style from '../styles/header/HeaderMenu.module.scss';
 
 export const HeaderMenu = (props) => {
   const [active, toggleActive] = useState(false);

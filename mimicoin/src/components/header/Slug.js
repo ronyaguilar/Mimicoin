@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {formatDollars2} from '../utils/helper';
 import axios from 'axios';
-import style from '../styles/NavGroup.module.scss';
+import style from '../styles/header/NavGroup.module.scss';
 
 class Slug extends Component {
   constructor(props){

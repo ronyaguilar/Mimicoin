@@ -1,7 +1,7 @@
 import React from 'react';
 
-import style from '../styles/StatLabel.module.scss';
-import {formatDollars2} from '../utils/helper.js';
+import style from '../../styles/pages/coin/StatLabel.module.scss';
+import {formatDollars2} from '../../utils/helper.js';
 
 export const StatLabel = (props) => {
 

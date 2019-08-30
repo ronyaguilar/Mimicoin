@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import style from '../styles/TableRow.module.scss';
+import style from '../../styles/pages/currencies/TableRow.module.scss';
 
 export const TableRow = (props) => {
   console.log(props.item);

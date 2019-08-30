@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {formatDollars2} from '../utils/helper';
-import style from '../styles/Asset.module.scss';
+import style from '../styles/widget/Asset.module.scss';
 
 export const Asset = (props) => {
   const [currentWorth, setCurrentWorth] = useState(0);

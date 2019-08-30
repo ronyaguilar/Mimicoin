@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import {Header} from './components/header/Header.js';
 import {Footer} from './components/Footer.js';
 import {LandingPage} from './components/LandingPage.js';
-import {CurrencyDashboard} from './components/dashboard/CurrencyDashboard';
-import {CoinPage} from './components/dashboard/CoinPage';
+import {CurrencyDashboard} from './components/pages/currencies/CurrencyDashboard';
+import {CoinPage} from './components/pages/coin/CoinPage';
 
 import style from './App.module.scss';
 import * as actions from './actions';

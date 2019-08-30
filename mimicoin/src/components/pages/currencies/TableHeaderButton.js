@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from '../styles/TableHeaderButton.module.scss';
+import style from '../../styles/pages/currencies/TableHeaderButton.module.scss';
 
 export const TableHeaderButton = (props) => {
   return(

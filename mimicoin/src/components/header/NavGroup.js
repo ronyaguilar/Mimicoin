@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import Slug from './Slug';
 
-import style from '../styles/NavGroup.module.scss';
+import style from '../styles/header/NavGroup.module.scss';
 
 export const NavGroup = (props) => {
   let navClass = style.navGroup;

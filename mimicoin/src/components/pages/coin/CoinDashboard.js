@@ -4,8 +4,8 @@ import axios from 'axios';
 import {StatLabel} from './StatLabel';
 import {CoinGraph} from './CoinGraph';
 
-import {formatDollars2, formatDollarAbbr} from '../utils/helper.js';
-import style from '../styles/CoinDashboard.module.scss';
+import {formatDollars2, formatDollarAbbr} from '../../utils/helper';
+import style from '../../styles/pages/coin/CoinDashboard.module.scss';
 
 export const CoinDashboard = (props) => {
   const [coin, setCoin] = useState({'price': 0, 'price_change': 0, 'high': 0, '1d' : 0});

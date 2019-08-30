@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../styles/Header.module.scss';
+import style from '../styles/header/Header.module.scss';
 import {Link} from 'react-router-dom';
 
 import {HeaderMenu} from './HeaderMenu.js';

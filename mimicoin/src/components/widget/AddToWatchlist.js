@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import style from '../styles/AddToWatchlist.module.scss';
+import style from '../styles/widget/AddToWatchlist.module.scss';
 import {addToWatchlist} from '../../actions';
 
 class AddToWatchlist extends Component{

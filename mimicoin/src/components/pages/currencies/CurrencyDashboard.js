@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import style from '../styles/CurrencyDashboard.module.scss';
+import style from '../../styles/pages/currencies/CurrencyDashboard.module.scss';
 import {CurrencyTable} from './CurrencyTable';
-import UserAssets from './UserAssets';
+import UserAssets from '../../widget/UserAssets';
 
 export const CurrencyDashboard = (props) => {
   const [coins, setCoins] = useState([]);

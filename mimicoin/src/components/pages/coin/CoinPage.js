@@ -1,11 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 
-import AddToWatchlist from './AddToWatchlist';
+import AddToWatchlist from '../../widget/AddToWatchlist';
 import {CoinDashboard} from './CoinDashboard';
-import SideWidget from './SideWidget';
+import SideWidget from '../../widget/SideWidget';
 
-import style from '../styles/CoinPage.module.scss';
+import style from '../../styles/pages/coin/CoinPage.module.scss';
 export const CoinPage = (props) => {
 
   return (

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {AssetList} from './AssetList';
-import style from '../styles/UserAssets.module.scss';
+import style from '../styles/widget/UserAssets.module.scss';
 
 const DefaultWidget = (props) => {
   return(

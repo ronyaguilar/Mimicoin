@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import style from '../styles/UserAssets.module.scss';
+import style from '../styles/widget/UserAssets.module.scss';
 import {AssetList} from './AssetList';
 
 class UserAssets extends Component {

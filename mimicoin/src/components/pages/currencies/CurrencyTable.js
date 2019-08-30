@@ -3,7 +3,7 @@ import React, {useState,useEffect} from 'react';
 import {TableHeaderButton} from './TableHeaderButton';
 import {TableRow} from './TableRow';
 
-import style from '../styles/CurrencyTable.module.scss';
+import style from '../../styles/pages/currencies/CurrencyTable.module.scss';
 
 export const CurrencyTable = (props) => {
   const [flag, setFlag] = useState("market_cap");
