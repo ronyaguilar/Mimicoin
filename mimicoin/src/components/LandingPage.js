@@ -14,15 +14,21 @@ export const LandingPage = () => {
       </div>
       <div className={style.introRow}>
         <div className={style.introGroup}>
-          <img style={{width: '180px'}}src={coinImage}/>
+          <span style={{fontSize: '6.25em'}}>
+           <i className="fas fa-coins"></i>
+          </span>
           <p>Follow the traffic of the giants and the newest altcoins that can be the next big thing.</p>
         </div>
         <div className={style.introGroup}>
-          <img src={magnifyChart}/>
-          <p>Coin prices are tracked in real-time for a more immersive experience.</p>
+          <span style={{fontSize: '6.25em'}}>
+           <i className="fas fa-chart-line"></i>
+          </span>
+          <p>Coin statistics are tracked in real-time to simulate a real experience.</p>
         </div>
         <div className={style.introGroup}>
-          <img src={digitalWallet}/>
+          <span style={{fontSize: '6.25em'}}>
+           <i className="fas fa-money-bill-wave"></i>
+          </span>
           <p>Learn what it takes to become profitable in the volatile market of cryptocurrency</p>
         </div>
       </div>

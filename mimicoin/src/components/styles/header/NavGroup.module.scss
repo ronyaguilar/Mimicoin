@@ -1,22 +1,11 @@
-.navGroup {
-  display: none;
-  color: white;
+$nav-color: #A8FFD0;
+$nav-font: 'ABeeZee', sans-serif;
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
   flex: 1;
-  ul{
-    display: flex;
-    flex: 1;
-    list-style: none;
-    align-items: center;
-    li{
-      flex: auto;
-      a{
-        color: inherit;
-        text-decoration: none;
-      }
-    }
-  }
 }
-
 .button {
   padding: 8px 10px 8px 10px;
   -webkit-appearance: button;
@@ -25,42 +14,74 @@
   background-color: rgba(67, 82, 106, 1);
   text-decoration: none;
   color: white;
+  font-family: $nav-font;
   font-size: 1.15rem;
 }
 
-.dropDownGroup{
+.showDropdown{
   display: flex;
+  background-color: rgba(10, 10, 10, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 65px;
   color: white;
-  width: 200px;
-  flex: 1;
+  font-size: 2rem;
+  width: 100%;
   ul{
     display: flex;
+    height: 180px;
     flex: 1;
     list-style: none;
     flex-direction: column;
-    align-items: flex-end;
-    li{
-      flex: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    :hover{
+      cursor: pointer;
     }
   }
+  li{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hideDropdown{
+  display: none;
+}
+
+.navGroup{
+  display: none;
 }
 
 @media screen and (min-width: 992px){
   .navGroup{
     display: flex;
     font-size: 1.75rem;
-  }
-  .dropDownGroup{
+    height: 100%;
     color: white;
     flex: 1;
     ul{
       display: flex;
-      flex-direction: row;
+      height: 100%;
       flex: 1;
       list-style: none;
+      align-items: center;
       li{
         flex: auto;
+        a{
+          color: inherit;
+          text-decoration: none;
+        }
       }
     }
   }
+
+  .showDropdown{
+    display: none;
+  }
+
 }

@@ -1,10 +1,13 @@
 $nav-font: 'ABeeZee', sans-serif;
+$cream: #E8DFE4;
 
 .landing{
   font-family: $nav-font;
   width: 100%;
   padding-bottom: 155px;
+  color: $cream;
 }
+
 .welcome{
   width: 100%;
   h1{
@@ -38,5 +41,8 @@ $nav-font: 'ABeeZee', sans-serif;
       height: 160px;
     }
   }
+}
 
+@media only screen and (min-width: 992px){
+  
 }

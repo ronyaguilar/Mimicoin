@@ -57,7 +57,7 @@ class Slug extends Component {
         return;
       case false:
         return (
-          <li><a className={style.button} href='/auth/google'><i className="fab fa-google"></i> Continue with Google</a></li>
+          <li><a style={{textDecoration: "none", color: "white"}} className={style.button} href='/auth/google'><i className="fab fa-google"></i> Continue with Google</a></li>
         );
       default:
         return (
@@ -67,7 +67,7 @@ class Slug extends Component {
   }
 
   render(){
-    return (<div>{this.renderSlug()}</div>);
+    return (<>{this.renderSlug()}</>);
   }
 }
 
