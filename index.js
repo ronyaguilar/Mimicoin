@@ -22,12 +22,12 @@ require('./routes/authentication')(app);
 
 if(process.env.NODE_ENV === 'production'){
   // Fetches production assets (js/css)
-  app.use(express.static('client/build'));
+  app.use(express.static('mimicoin/build'));
 
   const path = require('path');
   // 'Returns index file if route not recoginze'
   app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      res.sendFile(path.resolve(__dirname, 'mimicoin', 'build', 'index.html'));
   });
 }
 
