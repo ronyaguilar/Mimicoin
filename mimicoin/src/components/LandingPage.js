@@ -1,9 +1,6 @@
 import React from 'react';
 
 import style from './styles/LandingPage.module.scss';
-import coinImage from '../images/coin-group.png';
-import magnifyChart from '../images/magnify-chart.svg';
-import digitalWallet from '../images/digital-wallet.svg';
 
 export const LandingPage = () => {
   return(
