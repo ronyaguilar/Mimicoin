@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "dev": "concurrently \"npm run server\" \"npm run start --prefix mimicoin\""
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix mimicoin\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix mimicoin && npm run build --prefix mimicoin"
   },
   "repository": {
     "type": "git",

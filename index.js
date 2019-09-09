@@ -20,7 +20,16 @@ app.use(passport.session());
 
 require('./routes/authentication')(app);
 
+if(process.env.NODE_ENV === 'production'){
+  // Fetches production assets (js/css)
+  app.use(express.static('client/build'));
 
+  const path = require('path');
+  // 'Returns index file if route not recoginze'
+  app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
