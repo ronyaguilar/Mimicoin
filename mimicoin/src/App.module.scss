@@ -12,6 +12,13 @@ $old-background: #edeff2;
 }
 body{
   background-color: $darker-blue;
-  min-height: 100%;
+}
+
+.container{
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
   position: relative;
+  width: 100%;
+  padding-bottom: 55px;
 }

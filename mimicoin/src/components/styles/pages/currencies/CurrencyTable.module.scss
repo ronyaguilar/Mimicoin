@@ -8,12 +8,26 @@ $old-background: #edeff2;
 
 .currency{
   height: 100%;
+  width: 100%;
   padding-top: 1.5rem;
 }
 
 .currencyTable{
-  width: 90%;
   border: 0.5px solid $dark-blue;
   border-collapse: collapse;
   box-shadow: 0px 0px 2px $dark-blue;
+}
+
+@media only screen and (min-width: 992px){
+  .currency{
+    height: 100%;
+    padding-top: 1.5rem;
+  }
+  
+  .currencyTable{
+    width: 90%;
+    border: 0.5px solid $dark-blue;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 2px $dark-blue;
+  }
 }

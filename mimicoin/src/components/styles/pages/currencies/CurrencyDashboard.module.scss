@@ -11,28 +11,34 @@ $old-background: #edeff2;
 
 .container{
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
+  display: grid;
+  grid-template-areas: "l l l l"
+                       "t t t t"
+                       "w w w w";
+}
+
+.table{
+  grid-area: t;
+}
+.wallet{
+  grid-area: w;
 }
 
 .tableTitle{
   font-family: 'Abel', sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
   color: $cream;
+  grid-area: l;
 }
 
 @media only screen and (min-width: 992px){
   .container{
-    display: grid;
     grid-template-areas: "l l l l"
                          "t t t w";
   }
   .tableTitle{
-    grid-area: l;
+    font-size: 4rem;
   }
-  .table{
-    grid-area: t;
-  }
-  .wallet{
-    grid-area: w;
-  }
+
 }

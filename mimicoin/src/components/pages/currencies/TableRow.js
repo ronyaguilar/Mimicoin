@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {formatDollarAbbr} from '../../utils/helper';
 
 import style from '../../styles/pages/currencies/TableRow.module.scss';
 
@@ -13,6 +14,8 @@ export const TableRow = (props) => {
     volume = parseInt(props.item[props.period].volume);
   else
     volume = NaN;
+  
+    
 
   let cleanData = () => {
       if(isNaN(market_cap))
