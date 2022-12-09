@@ -24,7 +24,7 @@
   "homepage": "https://github.com/ronyaguilar/Mimicoin#readme",
   "dependencies": {
     "cookie-session": "^1.3.3",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.5.1",
     "passport": "^0.4.0",
